@@ -1,0 +1,185 @@
+<style>
+    input{text-transform: uppercase;}
+    textarea{text-transform: uppercase;}
+</style>
+
+<div class="col-lg-12">
+    <div class="row">
+        <div class="col-lg-12 col-xs-12">
+            <div class="row">
+                <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#GrupoNovoEditar" style="float: right">Novo</button>
+                <h4 >Lista de Grupo</h4>
+                <table id="listaGrupo" class="table table-hover table-striped" ></table>
+            </div>
+        </div>
+        <div class="col-lg-6">
+
+        </div>
+            <div class="row" >
+                <div class="modal fade" id="GrupoNovoEditar">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 id="titulo" class="modal-title">Novo Cadastro</h4>
+                        </div>
+                        <div class="modal-body form-inline">
+                            <div class="col-lg-6 col-xs-12" >
+                                <label for="gru_nome">Grupo Nome</label>
+                                <input type="text" class="form-control" id="gru_nome" >
+                            </div>
+                            <div class="col-lg-6 col-xs-12" >
+                                <label for="gru_nome_paxs">Paxs Nome</label>
+                                <input type="text" class="form-control" id="gru_nome_paxs">
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-6 col-xs-12" >
+                                <label for="guia_nome">Guia</label>
+                                <input type="text" class="form-control" id="guia_nome" >
+                                <input type="hidden" id="guia_id" >
+                            </div>
+                            <div class="col-lg-6 col-xs-12" >
+                                <label for="mot_nome">Motorista</label>
+                                <input type="text" class="form-control" id="mot_nome" >
+                                <input type="hidden" id="mot_id" >
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-6 col-xs-6" >
+                                <label for="gru_placa">Placa</label>
+                                <input type="text" class="form-control" id="gru_placa">
+                            </div>
+                            <div class="col-lg-6 col-xs-6" >
+                                <label for="gru_veiculo">Tipo de Veículo</label>
+                                <input type="text" class="form-control" id="gru_veiculo">
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-6 col-xs-12" >
+                                <label for="gru_coordenador">Coordenador</label>
+                                <input type="text" class="form-control" id="gru_coordenador" >
+                            </div>
+                            <div class="col-lg-6 col-xs-12" >
+                                <label for="hot_nome">Hotel</label>
+                                <input type="text" class="form-control" id="hot_nome" >
+                                <input type="hidden" id="hot_id" >
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-6 col-xs-6" >
+                                <label for="gru_hot_entrada">Entrada Hotel</label>
+                                <input type="text" class="form-control" id="gru_hot_entrada" >
+                            </div>
+                            <div class="col-lg-6 col-xs-6" >
+                                <label for="gru_hot_saida">Saida Hotel</label>
+                                <input type="text" class="form-control" id="gru_hot_saida" >
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-6 col-xs-12" >
+                                <label for="gru_hotel_detalhes">Obs.: Reserva Hotel</label>
+                                <textarea class="form-control" id="gru_hotel_detalhes" style="resize: none;"></textarea>
+                            </div>
+                            <div class="col-lg-6 col-xs-12" >
+                                <label for="gru_entinerario">Itinerário</label>
+                                <textarea class="form-control" id="gru_entinerario" style="resize: none;"></textarea>
+                            </div>                            
+                            <div class="col-lg-6 col-xs-12" >
+                                <label for="integrantes">Integrantes</label>
+                                <textarea class="form-control" id="integrantes" style="resize: none; overflow: auto;" readonly="readonly"></textarea>
+                            </div>
+                            <div class="col-lg-6 col-xs-12" style="margin-top: 10px">
+                                <button id="addPass" class="btn btn-default btn-sm" data-toggle="modal" data-target="#PassageiroNovoEditar" style="float: right">Add Passageiro</button>
+                            </div>
+                            <input type="hidden" id="gru_id">
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="gru_Salvar" type="button" class="btn btn-primary">Salvar</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancela</button>
+                        </div>
+                      </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                  </div><!-- /.modal -->
+                  <div class="modal fade" id="PassageiroNovoEditar">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 id="titulo" class="modal-title">Novo Passageiro</h4>
+                        </div>
+                        <div class="modal-body form-inline">
+                            <div class="col-lg-6 col-xs-12" >
+                                <label for="pas_nome">Nome</label>
+                                <input type="text" class="form-control" id="pas_nome" >
+                            </div>
+                            <div class="col-lg-3 col-xs-12" style="padding-left: 0px; ">
+                                <label for="pas_nascimento">Nascimento</label>
+                                <input type="text" class="form-control" id="pas_nascimento" >
+                            </div>
+                            
+                            <div class="col-lg-3 col-xs-12" style="padding-left: 0px; padding-right: 0px;">
+                                <label for="pas_documento">Documento</label>
+                                <input type="text" class="form-control" id="pas_documento" >
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-3 col-xs-12" >
+                                <label for="mov_tipoIn">Trans Tipo In</label>
+                                <select class="form-control" id="mov_tipoIn">
+                                    <option>Aéreo</option>
+                                    <option>Terrestre</option>
+                                    <option>Marítimo</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6 col-xs-12" style="padding-left: 0px;">
+                                <label for="mov_transporteIn">Nome Transporte In</label>
+                                <input type="text" class="form-control" id="mov_transporteIn" >
+                            </div>
+                            <div class="col-lg-3 col-xs-12" style="padding-left: 0px; padding-right: 0px;">
+                                <label for="mov_dataIn">In Data/Hora</label>
+                                <input type="text" class="form-control" id="mov_dataIn" >
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-3 col-xs-12" >
+                                <label for="mov_tipoOut">Trans Tipo Out</label>
+                                <select class="selectpicker form-control"  id="mov_tipoOut">
+                                    <option>Aéreo</option>
+                                    <option>Terrestre</option>
+                                    <option>Marítimo</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6 col-xs-12" style="padding-left: 0px; ">
+                                <label for="mov_transporteOut">Nome Transporte Out</label>
+                                <input type="text" class="form-control" id="mov_transporteOut" >
+                            </div>
+                            <div class="col-lg-3 col-xs-12" style="padding-left: 0px; padding-right: 0px;">
+                                <label for="mov_dataOut">Out Data/Hora</label>
+                                <input type="text" class="form-control" id="mov_dataOut" >
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="pss_Salvar" type="button" class="btn btn-primary">Inserir</button>
+                            <button id="voltar" type="button" class="btn btn-default" data-dismiss="modal">Voltar</button>
+                        </div>
+                      </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                  </div><!-- /.modal -->
+                  
+                <div class="modal fade" id="infoModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Menssagem</h4>
+                            </div>
+                        <div id="infoText" class="modal-body"></div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">fechar</button>
+                        </div>
+                      </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                  </div><!-- /.modal -->
+                
+            </div>
+        </div>
+    </div>
+<script>
+    loadjscssfile('js/cadastro/jsGrupo.js?nocache=1','js');
+    
+    
+  
+</script>

@@ -1,0 +1,83 @@
+<style>
+    input{text-transform: uppercase;}
+    textarea{text-transform: uppercase;}
+    
+</style>
+
+<div class="col-lg-12">
+    <div class="row">
+        <div class="col-lg-12 col-xs-12">
+            <div class="row">
+                <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#MotoristaNovoEditar" style="float: right">Novo</button>
+                <h4 >Motoristas Cadastrados</h4>
+                <table id="listaMotorista" class="table table-hover table-striped" ></table>
+            </div>
+        </div>
+            <div class="row" >
+                <div class="modal fade" id="MotoristaNovoEditar">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 id="titulo" class="modal-title">Novo Cadastro</h4>
+                        </div>
+                        <div class="modal-body form-inline">
+                            <div class="col-lg-12 col-xs-12" >
+                                <label for="mot_nome">Nome</label>
+                                <input type="text" class="form-control" id="mot_nome" placeholder="Digitar nome do Motorista">
+                            </div>
+                            <div class="col-lg-12 col-xs-12" >
+                                <label for="mot_endereco">Endereço</label>
+                                <input type="text" class="form-control" id="mot_endereco" placeholder="Digitar endereço">
+                            </div>
+                            <div class="col-lg-6 col-xs-6" >
+                                <label for="mot_celular">Celular</label>
+                                <input class="form-control" id="mot_celular" placeholder="Digitar o Celular" >
+                            </div>
+                            <div class="col-lg-6 col-xs-6" >
+                                <label for="mot_telefone">Telefone</label>
+                                <input class="form-control" id="mot_telefone" placeholder="Digitar telefone" >
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-6 col-xs-6" >
+                                <label for="mot_cpf">cpf</label>
+                                <input class="form-control" id="mot_cpf" placeholder="Digitar Cpf">
+                            </div>
+                            <div class="col-lg-6 col-xs-6" >
+                                <label for="mot_rg">rg</label>
+                                <input class="form-control" id="mot_rg" placeholder="Digitar Rg" >
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 col-xs-12" >
+                                <label for="mot_outros">Outros</label>
+                                <textarea class="form-control" id="mot_outros" placeholder="Outros" style="resize: none;"></textarea>
+                            </div>
+                            <input type="hidden" id="mot_id">
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="mot_Salvar" type="button" class="btn btn-primary">Salvar</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancela</button>
+                        </div>
+                      </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                  </div><!-- /.modal -->
+                  
+                <div class="modal fade" id="infoModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Menssagem</h4>
+                            </div>
+                        <div id="infoText" class="modal-body"></div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">fechar</button>
+                        </div>
+                      </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                  </div><!-- /.modal -->
+            </div>
+        </div>
+    </div>
+<script>
+    loadjscssfile('js/cadastro/jsMotorista.js?nocache=1','js');
+</script>

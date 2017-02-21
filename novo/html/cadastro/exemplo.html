@@ -1,0 +1,65 @@
+<style>
+    #tdId{
+        width: 60PX
+    }
+    
+</style>
+
+<div class="col-lg-12">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="row">
+                <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#HotelNovoEditar" style="float: right">Novo</button>
+                <h4 >Hoteis Cadastrado</h4>
+                <table id="listaHotel" class="table table-hover table-striped" ></table>
+            </div>
+        </div>
+            <div class="row" >
+                <div class="modal fade" id="HotelNovoEditar">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 id="titulo" class="modal-title">Novo Cadastro</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="hot_nome">Nome Hotel</label>
+                                <input type="text" class="form-control" id="hot_nome" placeholder="Digitar nome do Hotel">
+                            </div>
+                            <div class="form-group">
+                                <label for="hot_endereco">Endereço</label>
+                                <input type="text" class="form-control" id="hot_endereco" placeholder="Digitar endereço do Hotel">
+                            </div>
+                            <div class="form-group">
+                                <label for="hot_outros">Outros</label>
+                                <textarea class="form-control" id="hot_outros" placeholder="Digitar telefone do Hotel" style="resize: none;"></textarea>
+                            </div>
+                            <input type="hidden" id="hot_id">
+                        </div>
+                        <div class="modal-footer">
+                            <button id="hot_Salvar" type="button" class="btn btn-primary">Salvar</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancela</button>
+                        </div>
+                      </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                  </div><!-- /.modal -->
+                  
+                <div class="modal fade" id="infoModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Menssagem</h4>
+                            </div>
+                        <div id="infoText" class="modal-body"></div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">fechar</button>
+                        </div>
+                      </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                  </div><!-- /.modal -->
+            </div>
+        </div>
+    </div>
+<script>
+    loadjscssfile('js/cadastro/jsHotel.js?nocache=1','js');
+</script>
